@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Screen</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-2 text-center">Login to Lab Scheduler</h1>
+      <hr />
+      <form> 
+          <div class="col-6 offset-3 list-group">
+            <li class="list-group-item border border-0">
+                <label for="emailEntry" class="h2">Email:</label> <br />
+                <input
+                    type="text"
+                    id="emailEntry"
+                    class="w-100"
+                    placeholder="Type here..."
+                /> 
+            </li>
+            <li class="list-group-item border border-0">
+                <label for="passwordEntry" class="h2">Password:</label> <br />
+                <input
+                    type="text"
+                    id="passwordEntry"
+                    class="w-100"
+                    placeholder="Type here..."
+                /> 
+            </li>
+          </div>
+          <div class="flex-row-reverse mt-5 offset-3">
+            <button
+              type="button"
+              class="btn btn-primary py-0"
+              style="--bs-btn-font-size: 3rem"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary py-0 me-2"
+              style="--bs-btn-font-size: 3rem"
+            >
+              Forgot Password?
+          </div>
+        </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
