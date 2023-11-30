@@ -16,7 +16,7 @@
       <h1 class="display-2">Meeting Information</h1>
       <hr />
       <div class="row">
-        <div class="col-8">
+        <div class="col-7">
           <ul class="list-group">
             <li class="list-group-item border border-0">
               <h2 class="d-flex">
@@ -50,25 +50,46 @@
             </li>
           </ul>
         </div>
-        <div class="col-4">
-          <div class="dropdown-center">
+        <div class="col-5">
+          <div class="dropdown-center d-flex align-items-center">
+            <h2 class="text-nowrap">Lab Type:&thinsp;</h2>
             <button
-              class="btn btn-secondary dropdown-toggle fs-1"
+              class="btn btn-secondary dropdown-toggle fs-2 d-flex justify-content-end align-items-center w-100"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Choose Lab Type
+              <p id="typeDropdown" class="d-inline-block m-0 w-100 text-center">
+                Choose Lab Type
+              </p>
             </button>
-            <ul class="dropdown-menu w-100 text-center">
-              <li class="fs-1">
-                <a class="dropdown-item" href="#">Open Lab</a>
+            <ul class="dropdown-menu w-75 text-center">
+              <li class="fs-2">
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  onclick="updateDropdown(this)"
+                >
+                  Open Lab
+                </button>
               </li>
-              <li class="fs-1">
-                <a class="dropdown-item" href="#">Make-Up</a>
+              <li class="fs-2">
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  onclick="updateDropdown(this)"
+                >
+                  Make-Up
+                </button>
               </li>
-              <li class="fs-1">
-                <a class="dropdown-item" href="#">Revalidation</a>
+              <li class="fs-2">
+                <button
+                  class="dropdown-item"
+                  type="button"
+                  onclick="updateDropdown(this)"
+                >
+                  Revalidation
+                </button>
               </li>
             </ul>
           </div>
@@ -79,8 +100,17 @@
               type="button"
               class="btn btn-primary py-0"
               style="--bs-btn-font-size: 3rem"
+              id="signUp"
             >
               SIGN UP
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary py-0"
+              style="--bs-btn-font-size: 3rem"
+              id="withdraw"
+            >
+              WITHDRAW
             </button>
             <button
               type="button"
@@ -93,6 +123,19 @@
         </form>
       </div>
     </div>
+    <script>
+      function updateDropdown(element) {
+        document.getElementById("typeDropdown").innerText = element.innerText;
+      }
+
+      let signedUp = false;
+      document.getElementById("signUp").style.display = signedUp
+        ? "none"
+        : "inline-block";
+      document.getElementById("withdraw").style.display = signedUp
+        ? "inline-block"
+        : "none";
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
