@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Lab View</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-2">Meeting Information</h1>
+      <hr />
+      <div class="row">
+        <div class="col-7">
+          <ul class="list-group">
+            <li class="list-group-item border border-0">
+              <h2 class="d-flex">
+                Lab Title:&thinsp;
+                <p class="fw-normal m-0">NUR330 Health Assessment</p>
+              </h2>
+            </li>
+            <li class="list-group-item border border-0">
+              <h2 class="d-flex">
+                Meeting Time:&thinsp;
+                <p class="fw-normal m-0">11/15/23 3:00PM</p>
+              </h2>
+            </li>
+            <li class="list-group-item border border-0">
+              <h2 class="d-flex">
+                Location:&thinsp;
+                <p class="fw-normal m-0">Tator 230</p>
+              </h2>
+            </li>
+            <li class="list-group-item border border-0">
+              <h2 class="d-flex">
+                Professor:&thinsp;
+                <p class="fw-normal m-0">Jane Doe</p>
+              </h2>
+            </li>
+            <li class="list-group-item border border-0">
+              <h2 class="d-flex">
+                Additional Details:&thinsp;
+                <p class="fw-normal m-0">None</p>
+              </h2>
+            </li>
+          </ul>
+        </div>
+        <div class="col-5">
+          <div class="offset-3">
+            <label for="lab_type" class="h2">Lab Type: FILLER </label>
+          </div>
+        </div>
+        <form>
+          <div class="d-flex flex-row-reverse">
+            <button
+              type="button"
+              class="btn btn-primary py-0"
+              style="--bs-btn-font-size: 3rem"
+              id="back"
+              onclick= backButton();
+            >
+              BACK
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary py-0 me-2"
+              style="--bs-btn-font-size: 3rem"
+              id="edit"
+              onclick= editLab();
+            >
+              EDIT
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary py-0 me-2"
+              style="--bs-btn-font-size: 3rem"
+              id="delete"
+              onclick= deleteLab();
+            >
+              DELETE
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+        function deleteLab() {
+           if (confirm("Are you sure you want to delete this lab?")){
+            // put delete lab code here
+            window.location="adminIndex.html";
+           } else {
+            //cancel
+            document.getElementById("delete").style.background='green';
+           }
+        }
+
+        function editLab() {
+            window.location="post_lab.html";
+        }
+
+        function backButton() {
+            window.location="adminIndex.html";
+        }
+    </script>
+  </body>
+</html>

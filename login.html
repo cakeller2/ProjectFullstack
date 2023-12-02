@@ -41,7 +41,7 @@
               type="button"
               class="btn btn-primary py-0"
               style="--bs-btn-font-size: 3rem"
-              onclick="checkEntry();"
+              onclick=checkEntry();
             >
               Login
             </button>
@@ -61,14 +61,22 @@
     ></script>
     <script type="text/javascript">
         function checkEntry() {
-            var correctPassword = "test";
-            var correctEmail = "test@gmail.com"
-            var password = document.getElementById("pwd").value;
-            var email = document.getElementById("email").value;
-            if (password == correctPassword && email == correctEmail) {
-                 window.location="index.html";
+
+            var correctStdPwd = "test";
+            var correctStdEmail = "test@gmail.com";
+            var correctAdminPwd = "admin";
+            var correctAdminEmail = "admin@gmail.com";
+
+            var passwordStd = document.getElementById("pwd").value;
+            var emailStd = document.getElementById("email").value;
+            var passwordAdmin = document.getElementById("pwd").value;
+            var emailAdmin = document.getElementById("email").value;
+            if (passwordStd == correctStdPwd && emailStd == correctStdEmail) {
+                window.location="index.html";
             }
-            else{
+            else if (passwordAdmin == correctAdminPwd && emailAdmin == correctAdminEmail) {
+                window.location="adminIndex.html";
+            } else{
                 alert("Email and/or password is incorrect. Please try again.");
             }
         }

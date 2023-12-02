@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Post Open Lab</title>
+    <title>Edit Lab</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="display-2">Post Open Lab</h1>
+      <h1 class="display-2">Edit Lab</h1>
       <hr />
       <form>
         <div class="row">
@@ -66,21 +66,17 @@
               type="button"
               class="btn btn-primary py-0"
               style="--bs-btn-font-size: 3rem"
+              id="updateLab"
+              onclick= updateLabInfo();
             >
-              POST
+              UPDATE
             </button>
             <button
               type="button"
               class="btn btn-secondary py-0 me-2"
               style="--bs-btn-font-size: 3rem"
-            >
-              IMPORT
-            </button>
-            <button
-              type="button"
-              class="btn btn-secondary py-0 me-2"
-              style="--bs-btn-font-size: 3rem"
-              onclick= cancelPost();
+              id="cancelEdit"
+              onclick= goBack();
             >
               CANCEL
             </button>
@@ -94,9 +90,13 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript">
-      function cancelPost() {
-        window.location="adminIndex.html";
-      }
+        function updateLabInfo() {
+           window.location="adminIndex.html"
+        }
+
+        function goBack() {
+            window.location="adminLabView.html";
+        }
     </script>
   </body>
 </html>
