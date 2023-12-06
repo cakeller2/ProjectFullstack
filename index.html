@@ -10,30 +10,73 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <div class="container" style="padding-top: 10px">
-      <div class="row">
-        <div class="col">
-          <h1>Homepage</h1>
-        </div>
-        <div class="col-md-auto">
-          <div class="row">
-            <div class="col-md-auto">
-              <a class="btn btn-primary" role="button">Log In</a>
+    <div class="pos-f-t">
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+            <a class="navbar-brand text-white">
+                Homepage
+            </a>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                Filters
+              </button>
+              <div class="dropdown-menu checkbox-menu" aria-labelledby="dropdownMenuButton">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="searchbar" placeholder="Search">
+                </div>
+                <a class="dropdown-item" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Professor</a>
+                <ul class = "dropdown-menu checkbox-menu">
+                  <li>
+                    <label>
+                      <input type="checkbox"> Jane Doe
+                    </label>
+                    <label>
+                      <input type="checkbox"> John Doe
+                    </label>
+                    <label>
+                      <input type="checkbox"> Jim Doe
+                    </label>
+                  </li>
+                </ul>
+                <a class="dropdown-item" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Location</a>
+                <ul class = "dropdown-menu checkbox-menu">
+                  <li>
+                    <label>
+                      <input type="checkbox"> Tator 230
+                    </label>
+                    <label>
+                      <input type="checkbox"> Tator 130
+                    </label>
+                    <label>
+                      <input type="checkbox"> CCE 030
+                    </label>
+                  </li>
+                </ul>
+                <a class="dropdown-item" data-bs-toggle="dropdown" data-bs-auto-close="outside" href="#">Time and Date</a>
+                <ul class = "dropdown-menu checkbox-menu">
+                  <li>
+                    <label for="start">From</label>
+                      <input type="time" id="start" name="start">
+                    <label for="end">To</label>
+                      <input type="time" id="end" name="end">
+                    <label for="startD">From</label>
+                      <input type="date" name="startD"/>
+                    <label for="endD">To</label>
+                      <input type="date" name="endD"/>
+                  </li>
+                </ul>
+                <label>
+                  <input type="checkbox" checked="checked"> Available
+                </label>
+              </div>
             </div>
-            <div class="col-md-auto">
+            <div class="'container">
+              <a class="btn btn-primary" role="button">Log In</a>
               <a class = "btn btn-secondary">Sign Up</a>
             </div>
-          </div>
-        </div>
+        </nav>
       </div>
-    </div>
   </head>
   <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
     <div class="list-group">
       <a href="lab_view.html" class = "list-group-item list-group-item-action">
         <h4 class="d-flex">
@@ -168,5 +211,10 @@
         </h5>
       </a>
     </div>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
   </body>
 </html>
