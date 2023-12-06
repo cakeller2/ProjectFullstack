@@ -10,7 +10,9 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <div class="pos-f-t">
+  </head>
+  <body>
+    <header class="pos-f-t">
       <nav class="navbar navbar-dark bg-dark justify-content-between">
         <a class="navbar-brand text-white"> Homepage </a>
         <div class="dropdown">
@@ -90,13 +92,27 @@
           </div>
         </div>
         <div class="'container">
-          <a class="btn btn-primary" role="button">Log In</a>
-          <a class="btn btn-secondary">Sign Up</a>
+          <a
+            id="postLab"
+            class="btn btn-primary"
+            href="post_lab.html"
+            role="button"
+            >Post Lab</a
+          >
+          <a class="btn btn-secondary" href="login.html" role="button"
+            >Log Out</a
+          >
+          <button
+            id="toggleUserbtn"
+            class="btn btn-light"
+            type="button"
+            onclick="toggleUser()"
+          >
+            Switch to Admin
+          </button>
         </div>
       </nav>
-    </div>
-  </head>
-  <body>
+    </header>
     <div class="list-group">
       <a href="lab_view.html" class="list-group-item list-group-item-action">
         <h4 class="d-flex">
