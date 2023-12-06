@@ -144,6 +144,15 @@
             >
               DELETE
             </button>
+            <button
+            type="button"
+            class="btn btn-warning py-0 me-2"
+            style="--bs-btn-font-size: 3rem"
+            id="archive"
+            onclick="archiveLab()"
+          >
+            ARCHIVE
+          </button>
             <a
               class="btn btn-secondary py-0 me-2"
               href="edit_lab.html"
@@ -201,6 +210,7 @@
         //hide all admin view elements
         document.getElementById("delete").className = "d-none";
         document.getElementById("edit").className = "d-none";
+        document.getElementById("archive").className = "d-none";
 
         // singup/withdraw
         studentSignedUp = false;
@@ -220,6 +230,8 @@
           "btn btn-danger py-0 me-2";
         document.getElementById("edit").className =
           "btn btn-secondary py-0 me-2";
+        document.getElementById("archive").className =
+          "btn btn-warning py-0 me-2";
 
         // hide all student view elements
         document.getElementById("typeLabel").className = "d-none";
@@ -277,6 +289,13 @@
         if (confirm("Are you sure you want to delete this lab?")) {
           // put delete lab code here
           window.location = "index.html";
+        }
+      }
+
+      //archive logic
+      function archiveLab(){
+        if(confirm("Are you sure you want to archive this lab?")){
+          window.location = "index.html"
         }
       }
     </script>
