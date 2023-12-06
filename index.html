@@ -10,163 +10,209 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <div class="container" style="padding-top: 10px">
-      <div class="row">
-        <div class="col">
-          <h1>Homepage</h1>
-        </div>
-        <div class="col-md-auto">
-          <div class="row">
-            <div class="col-md-auto">
-              <a class="btn btn-primary" role="button">Log In</a>
-            </div>
-            <div class="col-md-auto">
-              <a class = "btn btn-secondary">Sign Up</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </head>
   <body>
+    <header class="container py-2">
+      <div class="d-flex align-items-center justify-content-between">
+        <h1>Homepage</h1>
+        <div>
+          <a
+            id="postLab"
+            class="btn btn-primary"
+            href="post_lab.html"
+            role="button"
+            >Post Lab</a
+          >
+          <a class="btn btn-secondary" href="login.html" role="button"
+            >Log Out</a
+          >
+          <button
+            id="toggleUserbtn"
+            class="btn btn-light"
+            type="button"
+            onclick="toggleUser()"
+          >
+            Switch to Admin
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="list-group">
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/15/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/16/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/17/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/18/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/19/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+      <a href="lab_view.html" class="list-group-item list-group-item-action">
+        <h4 class="d-flex">
+          Lab Title:&thinsp;
+          <p class="fw-normal m-0">NUR330 Health Assignment</p>
+        </h4>
+        <h5 class="d-flex">
+          Meeting Time:&thinsp;
+          <p class="fw-normal m-0">11/20/23 3:00PM</p>
+        </h5>
+        <h5 class="d-flex">
+          Location:&thinsp;
+          <p class="fw-normal m-0">Tator 230</p>
+        </h5>
+        <h5 class="d-flex">
+          Professor:&thinsp;
+          <p class="fw-normal m-0">Jane Doe</p>
+        </h5>
+        <h5 class="d-flex">
+          Additional Details:&thinsp;
+          <p class="fw-normal m-0">None</p>
+        </h5>
+      </a>
+    </div>
+    <script>
+      // variables
+      let sSignedIn = true; //student signed in
+      let aSignedIn = false; //admin signed in
+
+      // toggle views
+      function toggleUser() {
+        if (sSignedIn) {
+          sSignedIn = false;
+          aSignedIn = true;
+          adminView();
+        } else {
+          sSignedIn = true;
+          aSignedIn = false;
+          studentView();
+        }
+      }
+
+      // --student view--
+      window.onload = studentView(); // makes sure student view is loaded on page load
+      function studentView() {
+        // hide all admin view elements
+        document.getElementById("postLab").className = "d-none";
+
+        // update switch user button
+        document.getElementById("toggleUserbtn").innerText = "Switch to Admin";
+      }
+
+      // --admin view--
+      function adminView() {
+        // show all admin view elements
+        document.getElementById("postLab").className = "btn btn-primary";
+
+        // update switch user button
+        document.getElementById("toggleUserbtn").innerText =
+          "Switch to Student";
+      }
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <div class="list-group">
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/15/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/16/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/17/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/18/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/19/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-      <a href="lab_view.html" class = "list-group-item list-group-item-action">
-        <h4 class="d-flex">
-          Lab Title:&thinsp;
-          <p class="fw-normal m-0">NUR330 Health Assignment</p>
-        </h4>
-        <h5 class="d-flex">
-          Meeting Time:&thinsp;
-          <p class="fw-normal m-0">11/20/23 3:00PM</p>  
-        </h5>
-        <h5 class="d-flex">
-          Location:&thinsp;
-          <p class="fw-normal m-0">Tator 230</p>  
-        </h5>
-        <h5 class="d-flex">
-          Professor:&thinsp;
-          <p class="fw-normal m-0">Jane Doe</p>  
-        </h5>
-        <h5 class="d-flex">
-          Additional Details:&thinsp;
-          <p class="fw-normal m-0">None</p>  
-        </h5>
-      </a>
-    </div>
   </body>
 </html>
