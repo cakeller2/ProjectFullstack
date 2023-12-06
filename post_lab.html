@@ -66,6 +66,7 @@
               type="button"
               class="btn btn-primary py-0"
               style="--bs-btn-font-size: 3rem"
+              onclick="myFunction()"
             >
               POST
             </button>
@@ -76,14 +77,14 @@
             >
               IMPORT
             </button>
-            <button
-              type="button"
+            <a
               class="btn btn-secondary py-0 me-2"
+              href="adminIndex.html"
+              role="button"
               style="--bs-btn-font-size: 3rem"
-              onclick= cancelPost();
             >
               CANCEL
-            </button>
+            </a>
           </div>
         </div>
       </form>
@@ -93,10 +94,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript">
-      function cancelPost() {
-        window.location="adminIndex.html";
-      }
-    </script>
   </body>
 </html>

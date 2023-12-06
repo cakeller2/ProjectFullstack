@@ -13,7 +13,27 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="display-2">Meeting Information</h1>
+      <header class="d-flex align-items-center justify-content-between">
+        <h1 class="display-2 m-0">Meeting Information</h1>
+        <div>
+          <button
+            id="toggleSignUpbtn"
+            class="btn btn-light"
+            type="button"
+            onclick="toggleSignUp()"
+          >
+            Sign Up for Lab
+          </button>
+          <button
+            id="toggleUserbtn"
+            class="btn btn-light"
+            type="button"
+            onclick="toggleUser()"
+          >
+            Switch to Admin
+          </button>
+        </div>
+      </header>
       <hr />
       <div class="row">
         <div class="col-7">
@@ -52,14 +72,15 @@
         </div>
         <div class="col-5">
           <div class="dropdown-center d-flex align-items-center">
-            <h2 class="text-nowrap">Lab Type:&thinsp;</h2>
+            <h2 id="typeLabel" class="text-nowrap">Lab Type:&thinsp;</h2>
             <button
               class="btn btn-secondary dropdown-toggle fs-2 d-flex justify-content-end align-items-center w-100"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              id="typeButton"
             >
-              <p id="typeDropdown" class="d-inline-block m-0 w-100 text-center">
+              <p id="typeText" class="d-inline-block m-0 w-100 text-center">
                 Choose Lab Type
               </p>
             </button>
@@ -96,22 +117,43 @@
         </div>
         <form>
           <div class="d-flex flex-row-reverse">
-            <button
-              type="button"
+            <a
               class="btn btn-primary py-0"
+              href="index.html"
+              role="button"
               style="--bs-btn-font-size: 3rem"
               id="signUp"
             >
               SIGN UP
-            </button>
+            </a>
             <button
               type="button"
               class="btn btn-primary py-0"
               style="--bs-btn-font-size: 3rem"
               id="withdraw"
+              onclick="withdrawLab()"
             >
               WITHDRAW
             </button>
+            <button
+              type="button"
+              class="btn btn-danger py-0 me-2"
+              style="--bs-btn-font-size: 3rem"
+              id="delete"
+              onclick="deleteLab()"
+            >
+              DELETE
+            </button>
+            <a
+              class="btn btn-secondary py-0 me-2"
+              href="edit_lab.html"
+              role="button"
+              style="--bs-btn-font-size: 3rem"
+              id="edit"
+              onclick="editLab();"
+            >
+              EDIT
+            </a>
             <a
               class="btn btn-secondary py-0 me-2"
               href="index.html"
@@ -125,17 +167,111 @@
       </div>
     </div>
     <script>
-      function updateDropdown(element) {
-        document.getElementById("typeDropdown").innerText = element.innerText;
+      // variables
+      let sSignedIn = true; //student signed in
+      let aSignedIn = false; //admin signed in
+      let studentSignedUp = false; //if student is signed up for this lab
+
+      // toggle views
+      function toggleUser() {
+        if (sSignedIn) {
+          sSignedIn = false;
+          aSignedIn = true;
+          adminView();
+        } else {
+          sSignedIn = true;
+          aSignedIn = false;
+          studentView();
+        }
       }
 
-      let signedUp = false;
-      document.getElementById("signUp").style.display = signedUp
-        ? "none"
-        : "inline-block";
-      document.getElementById("withdraw").style.display = signedUp
-        ? "inline-block"
-        : "none";
+      // --student view--
+      window.onload = studentView(); // makes sure student view is loaded on page load
+      function studentView() {
+        // show all student view elements
+        document.getElementById("typeLabel").className = "text-nowrap";
+        document.getElementById("typeButton").className =
+          "btn btn-secondary dropdown-toggle fs-2 d-flex justify-content-end align-items-center w-100";
+        document.getElementById("typeText").className =
+          "d-inline-block m-0 w-100 text-center";
+        document.getElementById("signUp").className = "btn btn-primary py-0";
+        document.getElementById("withdraw").className = "btn btn-primary py-0";
+        document.getElementById("toggleSignUpbtn").className = "btn btn-light";
+
+        //hide all admin view elements
+        document.getElementById("delete").className = "d-none";
+        document.getElementById("edit").className = "d-none";
+
+        // singup/withdraw
+        studentSignedUp = false;
+        toggleSignUpLogic();
+
+        // reset dropdown text
+        document.getElementById("typeText").innerText = "Choose Lab Type";
+      }
+
+      // --admin view--
+      function adminView() {
+        // show all admin view elements
+        document.getElementById("delete").className =
+          "btn btn-danger py-0 me-2";
+        document.getElementById("edit").className =
+          "btn btn-secondary py-0 me-2";
+
+        // hide all student view elements
+        document.getElementById("typeLabel").className = "d-none";
+        document.getElementById("typeButton").className = "d-none";
+        document.getElementById("typeText").className = "d-none";
+        document.getElementById("signUp").className = "d-none";
+        document.getElementById("withdraw").className = "d-none";
+        document.getElementById("toggleSignUpbtn").className = "d-none";
+      }
+
+      // toggle sign up
+      function toggleSignUp() {
+        if (studentSignedUp) {
+          studentSignedUp = false;
+          document.getElementById("toggleSignUpbtn").innerText =
+            "Sign Up for Lab";
+          toggleSignUpLogic();
+        } else {
+          studentSignedUp = true;
+          document.getElementById("toggleSignUpbtn").innerText =
+            "Unsign Up for Lab";
+          toggleSignUpLogic();
+        }
+      }
+
+      // sign up/withdraw logic
+      function toggleSignUpLogic() {
+        document.getElementById("signUp").style.display = studentSignedUp
+          ? "none"
+          : "inline-block";
+        document.getElementById("withdraw").style.display = studentSignedUp
+          ? "inline-block"
+          : "none";
+      }
+
+      // dropdown logic
+      function updateDropdown(element) {
+        document.getElementById("typeText").innerText = element.innerText;
+      }
+
+      // withdraw logic
+      function withdrawLab() {
+        if (confirm("Are you sure you want to withdraw from this lab?")) {
+          // put delete lab code here
+          window.location = "index.html";
+        }
+      }
+
+      // delete logic
+      function deleteLab() {
+        if (confirm("Are you sure you want to delete this lab?")) {
+          // put delete lab code here
+          window.location = "index.html";
+        }
+      }
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
