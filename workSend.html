@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex align-items-center justify-content-between">
+        <h1 class="display-2 m-0">Assignment</h1>
+        <div>
+          <button
+            id="toggleUserViewbtn"
+            class="btn btn-light"
+            type="button"
+            onclick="toggleUserView()"
+          >
+            Switch to Admin View
+          </button>
+        </div> 
+      </header>
+      <hr />
+      <div class="row">
+        <div class="col-7">
+
+            <label for="who" class="h2 margin">Recipent:</label><br />
+                <input
+                  type="text"
+                  id="who"
+                  class="w-100"
+                  placeholder="Who?"
+                />
+
+            <input
+                type="file"
+                id="assignSubmit"
+            />
+          
+          <input
+                type="text"
+                id="comments"
+                class="w-100"
+                placeholder="Put comments here..."
+            />
+        </div>
+        
+        <form>
+          <div class="d-flex flex-row-reverse">
+            <a
+            class="btn btn-secondary py-0 me-2"
+              href="index.html"
+              role="button"
+              style="--bs-btn-font-size: 3rem"
+              id="submit"
+            >
+            SUBMIT
+            </a>
+            <a
+            class="btn btn-secondary py-0 me-2"
+              href="index.html"
+              role="button"
+              style="--bs-btn-font-size: 3rem"
+              id="send"
+            >
+            SEND
+            </a>
+            <a
+              class="btn btn-secondary py-0 me-2"
+              href="index.html"
+              role="button"
+              style="--bs-btn-font-size: 3rem"
+            >
+              CANCEL
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+        document.getElementById("who").style.margin = "15px";
+        document.getElementById("assignSubmit").style.margin = "15px";
+        document.getElementById("comments").style.margin = "15px";
+    
+      // variables
+      let sSignedIn = true; //student signed in
+      let aSignedIn = false; //admin signed in
+      let studentSignedUp = false; //if student is signed up for this lab
+
+      // toggle views
+      function toggleUserView() {
+        if (sSignedIn) {
+          sSignedIn = false;
+          aSignedIn = true;
+          adminView();
+        } else {
+          sSignedIn = true;
+          aSignedIn = false;
+          studentView();
+        }
+      }
+
+      // --student view--
+      window.onload = studentView(); // makes sure student view is loaded on page load
+      function studentView() {
+        // show all student view elements
+        document.getElementById("submit").className = "btn btn-primary py-0";
+        document.getElementById("toggleUserViewbtn").className = "btn btn-light";
+
+        //hide all admin view elements
+        document.getElementById("send").className = "d-none";
+
+        // update switch user button
+        document.getElementById("toggleUserViewbtn").innerText = "Switch to Admin";
+      }
+
+      // --admin view--
+      function adminView() {
+        // show all admin view elements
+        document.getElementById("send").className =
+          "btn btn-danger py-0 me-2";
+        
+        // hide all student view elements
+        document.getElementById("submit").className = "d-none";
+
+        // update switch user button
+        document.getElementById("toggleUserViewbtn").innerText =
+          "Switch to Student";
+      }
+    
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
