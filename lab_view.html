@@ -208,6 +208,9 @@
 
         // reset dropdown text
         document.getElementById("typeText").innerText = "Choose Lab Type";
+
+        // update switch user button
+        document.getElementById("toggleUserbtn").innerText = "Switch to Admin";
       }
 
       // --admin view--
@@ -225,6 +228,10 @@
         document.getElementById("signUp").className = "d-none";
         document.getElementById("withdraw").className = "d-none";
         document.getElementById("toggleSignUpbtn").className = "d-none";
+
+        // update switch user button
+        document.getElementById("toggleUserbtn").innerText =
+          "Switch to Student";
       }
 
       // toggle sign up
